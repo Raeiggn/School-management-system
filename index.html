@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Luma School management dashboard">
+    <title>Luma — School management made simple</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Luma home">
+          <span class="brand-mark">L</span>
+          <span>Luma<span class="brand-dot">.</span></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="overview"><span>⌂</span> Overview</button>
+          <button class="nav-item" data-view="students"><span>♙</span> Students <b>124</b></button>
+          <button class="nav-item" data-view="attendance"><span>✓</span> Attendance</button>
+          <button class="nav-item" data-view="classes"><span>▦</span> Classes</button>
+          <button class="nav-item" data-view="reports"><span>◌</span> Reports</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <button class="nav-item"><span>⚙</span> Settings</button>
+          <div class="user-card">
+            <div class="avatar">AM</div>
+            <div><strong>Alex Morgan</strong><small>Administrator</small></div>
+            <span class="more">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><i>/</i><strong id="pageName">Overview</strong></div>
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Search">⌕</button>
+            <button class="icon-button notification" aria-label="Notifications">♢<em></em></button>
+            <div class="top-avatar">AM</div>
+          </div>
+        </header>
+
+        <section class="page" id="overviewView">
+          <div class="page-heading">
+            <div><p class="eyebrow">MONDAY, SEPTEMBER 16, 2024</p><h1>Good morning, Alex <span>✦</span></h1><p class="muted">Here’s what’s happening at your school today.</p></div>
+            <button class="button primary" data-action="add-student">＋ Add student</button>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-card"><div class="stat-icon purple">♙</div><div><span>Total students</span><strong>124</strong><small class="positive">↗ 8.2% <i>vs last month</i></small></div><div class="sparkline purple-line"></div></article>
+            <article class="stat-card"><div class="stat-icon green">✓</div><div><span>Present today</span><strong>116</strong><small class="positive">93.5% <i>attendance rate</i></small></div><div class="sparkline green-line"></div></article>
+            <article class="stat-card"><div class="stat-icon orange">▦</div><div><span>Active classes</span><strong>12</strong><small class="neutral">Across 4 grades</small></div><div class="sparkline orange-line"></div></article>
+            <article class="stat-card"><div class="stat-icon blue">▤</div><div><span>Fee collection</span><strong>82%</strong><small class="positive">↗ 4.6% <i>vs last month</i></small></div><div class="sparkline blue-line"></div></article>
+          </div>
+          <div class="content-grid">
+            <article class="panel attendance-panel"><div class="panel-heading"><div><h2>Attendance overview</h2><p class="muted">Daily attendance for September</p></div><button class="select-button">This month⌄</button></div><div class="chart"><div class="chart-y"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="bars"><div class="bar-group"><i style="height:78%"></i><i style="height:88%"></i><small>02</small></div><div class="bar-group"><i style="height:85%"></i><i style="height:91%"></i><small>03</small></div><div class="bar-group"><i style="height:65%"></i><i style="height:76%"></i><small>04</small></div><div class="bar-group"><i style="height:90%"></i><i style="height:95%"></i><small>05</small></div><div class="bar-group"><i style="height:87%"></i><i style="height:93%"></i><small>06</small></div><div class="bar-group"><i style="height:84%"></i><i style="height:90%"></i><small>09</small></div><div class="bar-group"><i style="height:92%"></i><i style="height:97%"></i><small>10</small></div><div class="bar-group"><i style="height:80%"></i><i style="height:89%"></i><small>11</small></div><div class="bar-group"><i style="height:86%"></i><i style="height:94%"></i><small>12</small></div><div class="bar-group"><i style="height:88%"></i><i style="height:96%"></i><small>13</small></div></div></div><div class="legend"><span><i class="present-dot"></i>Present</span><span><i class="absent-dot"></i>Absent</span></div></article>
+            <article class="panel upcoming"><div class="panel-heading"><div><h2>Upcoming events</h2><p class="muted">The next 7 days</p></div><button class="text-button">View calendar →</button></div><div class="event"><time><b>18</b><small>SEP</small></time><div><strong>Parent–teacher meeting</strong><p>09:00 AM · Main hall</p></div><span class="event-dot purple-dot"></span></div><div class="event"><time><b>20</b><small>SEP</small></time><div><strong>Science fair</strong><p>10:30 AM · School grounds</p></div><span class="event-dot orange-dot"></span></div><div class="event"><time><b>22</b><small>SEP</small></time><div><strong>Football tryouts</strong><p>03:00 PM · Sports field</p></div><span class="event-dot green-dot"></span></div></article>
+          </div>
+          <article class="panel activity-panel"><div class="panel-heading"><div><h2>Recent activity</h2><p class="muted">Updates from your school</p></div><button class="text-button" data-view="students">View all →</button></div><div class="activity-row"><div class="activity-avatar purple-bg">JD</div><div><strong>Jordan Davis</strong><p>was enrolled in <b>Grade 8 · Section A</b></p></div><time>12 min ago</time></div><div class="activity-row"><div class="activity-avatar green-bg">✓</div><div><strong>Attendance marked</strong><p><b>Grade 7 · Section B</b> · 28 students present</p></div><time>1 hr ago</time></div></article>
+        </section>
+
+        <section class="page hidden" id="studentsView">
+          <div class="page-heading"><div><p class="eyebrow">DIRECTORY</p><h1>Students</h1><p class="muted">Manage your student records and enrollment.</p></div><button class="button primary" data-action="add-student">＋ Add student</button></div>
+          <article class="panel table-panel"><div class="table-toolbar"><div class="search-input">⌕ <input id="studentSearch" placeholder="Search students..." aria-label="Search students"></div><button class="select-button">All grades⌄</button><button class="select-button">Filter⌄</button></div><div class="table-wrap"><table><thead><tr><th>Student</th><th>Grade</th><th>Guardian</th><th>Attendance</th><th>Status</th></tr></thead><tbody id="studentRows"></tbody></table></div></article>
+        </section>
+        <section class="page hidden empty-view" id="attendanceView"><div class="empty-icon">✓</div><h1>Attendance</h1><p class="muted">Attendance tools are ready for your daily workflow.</p><button class="button primary" data-action="mark-attendance">Mark today’s attendance</button></section>
+        <section class="page hidden empty-view" id="classesView"><div class="empty-icon">▦</div><h1>Classes</h1><p class="muted">Organize grades, sections, and teaching schedules in one place.</p><button class="button primary" data-action="add-class">＋ Create a class</button></section>
+        <section class="page hidden empty-view" id="reportsView"><div class="empty-icon">◌</div><h1>Reports</h1><p class="muted">Your attendance and enrollment reports will appear here.</p><button class="button secondary" data-action="export">Export report</button></section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <dialog id="studentDialog"><form method="dialog" id="studentForm"><button class="dialog-close" value="cancel" aria-label="Close">×</button><p class="eyebrow">NEW RECORD</p><h2>Add a student</h2><label>Full name<input name="name" required placeholder="e.g. Maya Chen"></label><label>Grade & section<input name="grade" required placeholder="e.g. Grade 7 · Section A"></label><label>Guardian name<input name="guardian" required placeholder="e.g. Sam Chen"></label><div class="dialog-actions"><button class="button secondary" value="cancel">Cancel</button><button class="button primary" value="default">Save student</button></div></form></dialog>
+  </body>
+</html>
